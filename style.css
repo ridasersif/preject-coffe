@@ -96,3 +96,40 @@ section.main{
     margin-top: 30px;
     color: rgb(178, 116, 76);
 }
+footer{
+    background: #343434;
+    padding-top: 50px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+}
+.footer{
+    width: 33.33%;
+}
+.footer h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.footer p{
+    width: 190px;
+    margin: auto;
+    padding: 6px;
+}
+.footer ul{
+    text-align: center;
+}
+.list{
+    padding: 0;
+}
+.list li{
+    width: auto;
+    text-align: center;
+    list-style-type: none;
+    padding: 6px;
+}
+
+
