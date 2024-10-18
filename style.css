@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: rgb(178, 116, 76);
+    width: 100%;
+    padding: 10px 200px;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+.navigation a:hover{
+    color: rgb(66, 1, 127);
+}
+section{
+    padding: 100px 200px;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(./imag\ hoooome.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.main h2{
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+}
+.main p{
+    font-size:1.1em ;
+    font-weight: 400;
+    color: #fff;
+    margin: 20px;
+}
+.main-btn{
+    color: black;
+    display: inline-block;
+    background-color: rgb(253, 245, 239);
+    margin: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size:1.1em ;
+    font-weight: 600;
+    padding: 10px;
+}
+.main-btn:hover{
+    background-color:rgb(178, 116, 76);
+}
+.icons a{
+    color: #fff;
+    margin: 20px;
+    font-size: 1.5em;
+}
+.icons a:hover{
+    color: rgb(178, 116, 76) ;
+}
