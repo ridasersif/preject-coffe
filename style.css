@@ -96,6 +96,17 @@ section.main{
     margin-top: 30px;
     color: rgb(178, 116, 76);
 }
+
+
+
+
+
+
+
+
+
+
+
 footer{
     background: #343434;
     padding-top: 50px;
@@ -122,14 +133,41 @@ footer{
 .footer ul{
     text-align: center;
 }
+#list{
+    display: flex;
+    justify-content: center;
+   
+}
 .list{
     padding: 0;
+}
+.footer h3{
+    color: #fff;
+}
+.footer p{
+    color: #fff;
 }
 .list li{
     width: auto;
     text-align: center;
     list-style-type: none;
     padding: 6px;
+}
+.list li a{
+    text-decoration: none;
+    color: #fff;
+}
+.list li a:hover{
+    color: rgb(178, 116, 76);
+
+    
+}
+.botton-bar{
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    background-color: rgb(218, 200, 59);
+    color: #fff;
 }
 
 
