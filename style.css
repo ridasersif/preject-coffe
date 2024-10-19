@@ -142,18 +142,58 @@ section.main{
 /**************************contacct*******************************/
 .contact{
     padding: 60px;
+    background-color: rgb(253, 245, 239);
 }
 #contact{
     display: flex;
-    justify-content: space-around;
+   justify-content: center;
+   gap: 50px;
+}
+.right{
+   
+    width: 30%;
+}
+.right h2{
+    color: rgb(178, 116, 76) ;
+    margin-bottom: 20px;
+}
+label{
+    font-size: 20Px;
+    font-weight: 600;
 }
 form{
     display:flex;
     flex-direction: column;
 }
-.right input{
-    margin-bottom: 40px;
+.right input,textarea{
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow:2px 2px 2px rgba(0, 0, 0, 0.584);
 }
+button{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow:2px 2px 2px rgba(0, 0, 0, 0.584); 
+}
+.button-message{
+    display: flex;
+    justify-content: center;
+}
+button:hover{
+    background-color: rgb(178, 116, 76) ;;
+}
+iframe{
+    border-radius: 20px;
+    box-shadow:2px 2px 2px rgba(0, 0, 0, 0.584);
+    
+}
+
+
 
 
 
