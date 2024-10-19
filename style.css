@@ -139,6 +139,22 @@ section.main{
     padding-top: 20px;
     color:  rgb(178, 116, 76);
 }
+/**************************contacct*******************************/
+.contact{
+    padding: 60px;
+}
+#contact{
+    display: flex;
+    justify-content: space-around;
+}
+form{
+    display:flex;
+    flex-direction: column;
+}
+.right input{
+    margin-bottom: 40px;
+}
+
 
 
 
@@ -212,5 +228,6 @@ footer{
     background-color: rgb(83, 74, 2);
     color: #fff;
 }
+
 
 
