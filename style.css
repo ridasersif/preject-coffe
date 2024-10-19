@@ -40,21 +40,21 @@ section.main{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url(./imag\ hoooome.jpg) ;
+    background-image: url(imag2-home.webp) ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 .main h2{
-    color: #fff;
+    color: #000000;
     font-size: 2em;
     font-weight: 700;
 }
 .main p{
     font-size:1.1em ;
-    font-weight: 400;
-    color: #fff;
+    font-weight: 800;
+    color: #000000;
     margin: 20px;
 }
 .main-btn{
