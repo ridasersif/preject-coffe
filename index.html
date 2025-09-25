@@ -1,69 +1,621 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Coffeshop|rida sersif </title>
+    <title>Café Sersif - Excellence du Café Marocain</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --coffee-brown: #6B4423;
+            --coffee-dark: #4A2C17;
+            --coffee-light: #D2B48C;
+            --cream: #F5F5DC;
+            --gold: #DAA520;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2061&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+        
+        .btn-coffee {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+        }
+        
+        .btn-coffee:hover {
+            background: var(--coffee-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.6);
+        }
+        
+        .navbar {
+            background: rgba(0,0,0,0.9) !important;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background: var(--coffee-dark) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold) !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--coffee-dark);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: none;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .product-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-price {
+            color: var(--gold);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .about-section {
+            background: linear-gradient(135deg, var(--cream) 0%, #f8f9fa 100%);
+            padding: 80px 0;
+        }
+        
+        .services-section {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .products-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, var(--cream) 100%);
+            padding: 80px 0;
+        }
+        
+        .contact-section {
+            background: var(--coffee-dark);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating-coffee {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(218, 165, 32, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-coffee:hover {
+            background: var(--coffee-dark);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-                <!--navbar-->
-    <header>
-        <a href="#" class="logo"> Coffe</a>
-        <nav class="navigation">
-                <a href="index.html"> Home</a>
-                <a href="Gallory.html"> Gallory</a>
-                <a href="Contact.html">Contact</a>
-        </nav>
-    </header>
-                <!--main_home-->
-    <section class="main">
-        <div>
-            <h2>Start Your Day With a <br> Fresh Coffee</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br> Libero, fugit
-                ipsum dolor sit amet consectetur.</p>
-            <a href="Gallory.html" class="main-btn">shop now</a>
-            <div class="icons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-coffee"></i> Café Sersif</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Produits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-content animate-on-scroll">
+                        <h1>Café Sersif</h1>
+                        <p>Découvrez l'excellence du café marocain dans une atmosphère chaleureuse et authentique</p>
+                        <a href="#products" class="btn btn-coffee">Découvrir nos cafés</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-               <!--footer-->
-     <footer>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
         <div class="container">
-            <div class="footer">
-                <h3>Contact</h3>
-                <p>Emall:ridasersif1@gmail.com</p>
-                <p>Phone:+212 650052037</p>
-                <p>Address:youssofia</p>
-            </div>
-            <div class="footer">
-                <h3>Quick Link</h3>
-                <ul class="list">
-                   
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Gallory.html">Gallory</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer">
-                <h3>Follow</h3> 
-               <ul class="list" id="list">
-                <li> <a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li> <a href=""><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Café Sersif Interior" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <h2 class="section-title text-start">Notre Histoire</h2>
+                    <p class="lead">Café Sersif est né de la passion pour l'art du café et l'hospitalité marocaine traditionnelle.</p>
+                    <p>Depuis notre ouverture, nous nous efforçons de créer un espace où chaque tasse de café raconte une histoire, où chaque client devient partie de notre famille. Notre café est torréfié avec amour et notre service reflète les valeurs d'accueil et de générosité du Maroc.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-award text-warning me-2"></i>Qualité Premium</h5>
+                            <p>Grains sélectionnés avec soin</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-heart text-warning me-2"></i>Fait avec Amour</h5>
+                            <p>Chaque tasse préparée avec passion</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="botton-bar">
-            <p>&copy; 2024 Coffeshop</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Nos Services</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h4>Café Artisanal</h4>
+                        <p>Torréfaction artisanale de grains premium sélectionnés dans les meilleures plantations du monde.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h4>Pâtisserie Maison</h4>
+                        <p>Délicieuses pâtisseries et viennoiseries fraîches préparées quotidiennement par nos chefs pâtissiers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Espace Coworking</h4>
+                        <p>Un environnement parfait pour travailler, étudier ou rencontrer des amis avec WiFi gratuit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4>Livraison Rapide</h4>
+                        <p>Service de livraison à domicile et au bureau pour vos cafés et pâtisseries préférés.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4>Événements Privés</h4>
+                        <p>Organisation d'événements privés, réunions d'affaires et célébrations dans notre espace.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Cours de Barista</h4>
+                        <p>Apprenez l'art du café avec nos baristas experts dans des cours personnalisés.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-     </footer>
-    
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Nos Produits</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="card-img-top product-img" alt="Espresso">
+                        <div class="card-body">
+                            <h5 class="card-title">Espresso Classique</h5>
+                            <p class="card-text">Un espresso riche et intense, préparé avec nos grains signature torréfiés à la perfection.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">25 DH</span>
+                                <button class="btn btn-coffee btn-sm">Commander</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="card-img-top product-img" alt="Cappuccino">
+                        <div class="card-body">
+                            <h5 class="card-title">Cappuccino Sersif</h5>
+                            <p class="card-text">Notre cappuccino signature avec mousse de lait onctueuse et une pointe de cannelle.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">35 DH</span>
+                                <button class="btn btn-coffee btn-sm">Commander</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="card-img-top product-img" alt="Latte">
+                        <div class="card-body">
+                            <h5 class="card-title">Latte Vanille</h5>
+                            <p class="card-text">Café latte crémeux infusé à la vanille naturelle de Madagascar.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">40 DH</span>
+                                <button class="btn btn-coffee btn-sm">Commander</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="card-img-top product-img" alt="Croissant">
+                        <div class="card-body">
+                            <h5 class="card-title">Croissant Artisanal</h5>
+                            <p class="card-text">Croissant français traditionnel, croustillant à l'extérieur et moelleux à l'intérieur.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">18 DH</span>
+                                <button class="btn btn-coffee btn-sm">Commander</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="card-img-top product-img" alt="Muffin">
+                        <div class="card-body">
+                            <h5 class="card-title">Muffin aux Myrtilles</h5>
+                            <p class="card-text">Muffin moelleux aux myrtilles fraîches, parfait avec votre café matinal.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">22 DH</span>
+                                <button class="btn btn-coffee btn-sm">Commander</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             class="card-img-top product-img" alt="Thé à la menthe">
+                        <div class="card-body">
+                            <h5 class="card-title">Thé à la Menthe</h5>
+                            <p class="card-text">Thé vert traditionnel marocain à la menthe fraîche, préparé selon la tradition.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">20 DH</span>
+                                <button class="btn btn-coffee btn-sm">Commander</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center animate-on-scroll">
+                    <h2 class="section-title text-white">Contactez-nous</h2>
+                    <p class="lead mb-5">Venez nous rendre visite ou contactez-nous pour toute information</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4 animate-on-scroll">
+                    <div class="text-center">
+                        <div class="service-icon text-white">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Adresse</h5>
+                        <p>123 Boulevard Mohammed V<br>Casablanca, Maroc</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 animate-on-scroll">
+                    <div class="text-center">
+                        <div class="service-icon text-white">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Téléphone</h5>
+                        <p>+212 650052037</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 animate-on-scroll">
+                    <div class="text-center">
+                        <div class="service-icon text-white">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Horaires</h5>
+                        <p>Lun-Dim: 7h00 - 23h00<br>Service continu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <h5><i class="fas fa-coffee"></i> Café Sersif</h5>
+                    <p>L'excellence du café marocain dans une atmosphère chaleureuse et authentique.</p>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <h5>Liens Rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light">Accueil</a></li>
+                        <li><a href="#about" class="text-light">À Propos</a></li>
+                        <li><a href="#services" class="text-light">Services</a></li>
+                        <li><a href="#products" class="text-light">Produits</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <h5>Suivez-nous</h5>
+                   <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/rida-sersif-721497330/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/ridasersif" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/+212650052037"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2024 Café Sersif. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Coffee Button -->
+    <div class="floating-coffee" onclick="scrollToTop()">
+        <i class="fas fa-coffee"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Order button functionality
+        document.querySelectorAll('.btn-coffee').forEach(button => {
+            if (button.textContent.trim() === 'Commander') {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productName = this.closest('.card').querySelector('.card-title').textContent;
+                    alert(`Merci pour votre commande de "${productName}"! Nous vous contacterons bientôt.`);
+                });
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
 </html>
